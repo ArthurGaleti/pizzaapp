@@ -9,29 +9,34 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\{
     User
 };
+use PHPUnit\TestRunner\TestResult\Collector;
 
 class Cargo extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $table = 'cargos';
-    protected $primarykey = 'id_cargo';
-    protected $dates = ['created_at','updated_at','deleted_at'];
+    protected $primaryKey = 'id_cargo';
+
+    protected $dates = [
+                'created_at',
+                'updated_at',
+                'deleted_at'
+    ];
 
     protected $fillable = [
-            'cargo'
+        'cargo'
     ];
 
     /**
-     * --------------------------------------
-     * RELACIONAMENTOS
-     * --------------------------------------
+     * ------------------------------------------------------------
+     *  RELACIONAMENTOS
+     * ------------------------------------------------------------
      */
 
-     public function usuarios():object{
-        return $this->belongsTo(User::class,
-                                'id_cargo',
-                                'id_cargo');
-     }
+        public function usuarios(): object {
+            return $this->belongsTo( User::class,
+                                    'id_cargo',
+                                    'id_cargo');
+        }
 }
-

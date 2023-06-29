@@ -69,7 +69,7 @@ Route::middleware('auth')->group(function () {
   Route::get('/edit/{id}','edit')->name('cliente.edit');
   Route::get('/store','store')->name('cliente.store');
   Route::get('/update','update')->name('cliente.update');
-  Route::get('/destroy','destroy')->name('cliente.destroy');
+  Route::get('/destroy/{id}','destroy')->name('cliente.destroy');
  });
 
  /**
