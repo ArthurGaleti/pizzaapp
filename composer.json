@@ -1,7 +1,7 @@
 {
     "name": "t94/pizzaapp",
     "type": "project",
-    "description": "Sistema de pedidos para pizzaria",
+    "description": "Sistema de pedidos para pizzaria.",
     "keywords": ["app", "pizzaria"],
     "license": "MIT",
     "require": {

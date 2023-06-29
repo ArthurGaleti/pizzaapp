@@ -17,10 +17,9 @@ class ClienteEnderecoFactory extends Factory
     public function definition(): array
     {
         return [
-           'id_cliente' =>fake()->numberBetween(1,50),
-           'id_endereco' =>fake()->numberBetween(1,50),
-           'observacoes' =>fake()->paragraph(),
-           
+            'id_cliente' => fake()->numberBetween(1,50),
+            'id_endereco' => fake()->numberBetween(1,50),
+            'observacoes' => fake()->paragraph(),
         ];
     }
 }

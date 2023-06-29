@@ -19,7 +19,7 @@ class ClienteFactory extends Factory
         return [
             'nome' => fake()->firstName(),
             'ddd' => '11',
-            'celular' => fake()->phoneNumber(),
+            'celular' => fake()->numberBetween(10,500),
             'email' => fake()->email(),
             'observacoes' => fake()->paragraph(),
         ];

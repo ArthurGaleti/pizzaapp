@@ -17,14 +17,14 @@ class EnderecoFactory extends Factory
     public function definition(): array
     {
         return [
-            'endereco' =>fake()->address(),
-            'numero' =>fake()->numberBetween(1,1000),
-            'complemento' =>fake()->randomLetter(),
-            'bairro' => fake()->words(),
-            'cidade' =>fake()->city(),
+            'endereco' => fake()->address(),
+            'numero' => fake()->numberBetween(1,1000),
+            'complemento' => fake()->randomLetter(),
+            'bairro' => fake()->word(),
+            'cidade' => fake()->city(),
             'uf' => 'SP',
-            'cep' => fake()->postcode(),
-            'observacoes' =>fake()->paragraph(),
+            'cep' => fake()->numberBetween(1,1000),
+            'observacoes' => fake()->word(),
         ];
     }
 }

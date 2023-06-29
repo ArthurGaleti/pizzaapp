@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('cep',9)->nullable();
             $table->text('observacoes')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

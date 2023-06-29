@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produto;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreProdutoRequest;
+use App\Http\Requests\UpdateProdutoRequest;
 
 class ProdutoController extends Controller
 {
@@ -26,7 +27,7 @@ class ProdutoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProdutoRequest $request)
     {
         //
     }
@@ -50,7 +51,7 @@ class ProdutoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Produto $produto)
+    public function update(UpdateProdutoRequest $request, Produto $produto)
     {
         //
     }

@@ -8,30 +8,31 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Cliente extends Model
 {
+
     use HasFactory, SoftDeletes;
 
-    protected $table="clientes";
-    protected $primaryKey = "id_cliente";
-    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
-
+    protected $table = 'clientes';
+    protected $primarykey = 'id_cliente';
+    protected $dates = ['created_at','updated_at','deleted_at'];
 
     protected $fillable = [
-        'nome',
-        'ddd',
-        'celular',
-        'email',
-        'observacoes'
+            'nome',
+            'ddd',
+            'celular',
+            'email',
+            'observacoes',
     ];
 
-
     /**
-     *--------------------------------------
-     *           Relacionamento
-     * -------------------------------------
+     * --------------------------------------
+     * RELACIONAMENTOS
+     * --------------------------------------
      */
-
-    //  public function usuarios(): object
-    //  {
-    //     return $this->belongsTo(User::class, 'id_cargo', 'id_cargo');
-    //  }
+/*
+     public function usuarios():object{
+        return $this->belongsTo(User::class,
+                                'id_cliente',
+                                'id_cliente');
+     }
+     */
 }

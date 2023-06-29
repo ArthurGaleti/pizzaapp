@@ -20,7 +20,6 @@ class ProdutoFactory extends Factory
             'nome' => fake()->name(),
             'id_tipo_produto' => 1,
             'descricao' => fake()->text(),
-
         ];
     }
 }

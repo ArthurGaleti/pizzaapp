@@ -19,8 +19,8 @@ class ProdutoTamanhoFactory extends Factory
         return [
             'id_produto' => fake()->numberBetween(1,50),
             'id_tamanho' => 1,
-            'preco' => fake()->price(10,500),
-            'observacoes' => fake()->text(200)
+            'preco' => fake()->numberBetween(10,500),
+            'observacoes' => fake()->text(200),
         ];
     }
 }

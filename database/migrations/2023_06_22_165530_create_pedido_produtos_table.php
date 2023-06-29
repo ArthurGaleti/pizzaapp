@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clientes_enderecos', function (Blueprint $table) {
-            $table->increments('id_cliente_endereco');
-            $table->increments('id_cliente');
-            $table->increments('id_endereco');
+        Schema::create('pedidos_produtos', function (Blueprint $table) {
+            $table->increments('id_pedido_produto');
+            $table->bigInteger('id_user');
+            $table->integer('id_pedido');
+            $table->integer('id_produto_tamanho');
+            $table->decimal('preco',10,2)->nullable();
+            $table->decimal('qtd',10,2)->nullable();
+            $table->decimal('subtotal',10,2)->nullable();
             $table->text('observacoes')->nullable();
             $table->timestamps();
             $table->softDeletes();
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('clientes_enderecos');
+        Schema::dropIfExists('pedidos_produtos');
     }
 };

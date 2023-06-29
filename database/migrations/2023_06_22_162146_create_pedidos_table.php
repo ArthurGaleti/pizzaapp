@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pedidos_produtos', function (Blueprint $table) {
-            $table->increments('id_pedido_produto');
+        Schema::create('pedidos', function (Blueprint $table) {
+            $table->increments('id_pedido');
+            $table->integer('id_tipo_pedido');
             $table->bigInteger('id_user');
-            $table->iteget('id_pedido');
-            $table->iteget('id_produto_tamanho');
-            $table->decimal('preco',10,2)->nullable();
-            $table->decimal('qtd',10,2)->nullable();
-            $table->decimal('subtotal',10,2)->nullable();
+            $table->integer('id_cliente');
+            $table->integer('id_cliente_endereco');
+            $table->integer('id_status');
+            $table->integer('id_tipo_pagamento');
+            $table->decimal('total',10,2)->default(0)->nullable();
             $table->text('observacoes')->nullable();
             $table->timestamps();
             $table->softDeletes();
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pedido_produtos');
+        Schema::dropIfExists('pedidos');
     }
 };

@@ -6,43 +6,50 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-use app\Models\{Cliente, ClienteEndereco, Status, TipoPagamento, TipoPedido, User};
+use App\Models\{
+    Pedido,
+    ProdutoTamanho,
+    User,
+};
 
 class PedidoProduto extends Model
 {
-    use HasFactory;
-
     use HasFactory, SoftDeletes;
 
-    protected $table="pedidos_produtos";
-    protected $primaryKey = "id_pedido_produto";
-    protected $dates = ['created_at', 'updated_at', 'deleted_at'];
-
+    protected $table = 'pedidos_produtos';
+    protected $primarykey = 'id_pedido_produto';
+    protected $dates = ['created_at','updated_at','deleted_at'];
 
     protected $fillable = [
-        'id_user',
-        'id_pedido',
-        'id_produto_tamanho',
-        'preco',
-        'qtd',
-        'subtotal',
-        'observacoes'
+            'id_user',
+            'id_pedido',
+            'id_produto_tamanho',
+            'preco',
+            'qtd',
+            'subtotal',
+            'observacoes',
     ];
 
+    /**
+     * --------------------------------------
+     * RELACIONAMENTOS
+     * --------------------------------------
+     */
 
-    public function usuarios(): object
-     {
-        return $this->belongsTo(User::class, 'id_user', 'id_user');
+    public function usuario():object{
+        return $this->belongsTo(User::class,
+                                'id_user',
+                                'id_user');
      }
-
-     public function pedido(): object
-     {
-        return $this->belongsTo(Pedido::class, 'id_pedido', 'id_pedido');
+    public function pedido():object{
+        return $this->belongsTo(Pedido::class,
+                                'id_pedido',
+                                'id_pedido');
      }
-
-     public function produto(): object
-     {
-        return $this->belongsTo(ProdutoTamanho::class, 'id_produto_tamanho', 'id_produto_tamanho');
-     }
+     public function produto():object{
+         return $this->belongsTo(ProdutoTamanho::class,
+                                 'id_produto_tamanho',
+                                 'id_produto_tamanho');
+      }
 
 }

@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipo_pagamentos', function (Blueprint $table) {
-            $table->increments('id_tipo_pagamento');
-            $table->string('tipo_pagamento');
+        Schema::create('clientes_enderecos', function (Blueprint $table) {
+            $table->increments('id_cliente_endereco');
+            $table->integer('id_cliente');
+            $table->integer('id_endereco');
+            $table->text('observacoes')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipo_pagamentos');
+        Schema::dropIfExists('clientes_enderecos');
     }
 };
