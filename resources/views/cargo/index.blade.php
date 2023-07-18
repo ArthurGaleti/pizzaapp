@@ -2,7 +2,7 @@
 @section('content')
 
 <h1>Cargos</h1>
-<table>
+<table class="table table-striped table-hover">
     <thead>
         <tr>
             <th>Ações</th>

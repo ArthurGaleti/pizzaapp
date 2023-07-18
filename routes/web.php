@@ -121,9 +121,14 @@ Route::middleware('auth')->group(function () {
   Route::get('/novo','create')->name('produto.create');
   Route::get('/{id}','show')->name('produto.show');
   Route::get('/edit/{id}','edit')->name('produto.edit');
+  Route::get('/tamanho/{id_produto}', 'createTamanho')->name('produto.createTamanho');
+  Route::get('/tamanho/editar/{id}', 'editTamanho')->name('produto.editTamanho');
   Route::get('/store','store')->name('produto.store');
-  Route::get('/update','update')->name('produto.update');
-  Route::get('/destroy','destroy')->name('produto.destroy');
+  Route::post('/update','update')->name('produto.update');
+  Route::post('/destroy/{id}','destroy')->name('produto.destroy');
+  Route::post('/tamanho/store', 'storeTamanho')->name('produto.storeTamanho');
+  Route::post('/tamanho/update','updateTamanho')->name('produto.updateTamanho');
+  Route::post('/tamanho/destroy','destroyTamanho')->name('produto.destroyTamanho');
  });
 
  /**

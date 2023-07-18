@@ -35,5 +35,13 @@ class Produto extends Model
         return $this->belongsTo(User::class,
                                 'id_tipo_produto',
                                 'id_tipo_produto');
-     }
+    }
+
+    public function tamanhos():object{
+        return $this->belongsTo(User::class,
+                                'id_tipo_produto',
+                                'id_tipo_produto');
+    }
+
+
 }
