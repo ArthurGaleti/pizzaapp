@@ -126,7 +126,7 @@ Route::middleware('auth')->group(function () {
   Route::get('/store','store')->name('produto.store');
   Route::post('/update','update')->name('produto.update');
   Route::post('/destroy/{id}','destroy')->name('produto.destroy');
-  Route::post('/tamanho/store', 'storeTamanho')->name('produto.storeTamanho');
+  Route::post('/tamanho/store/{id_produto}', 'storeTamanho')->name('produto.storeTamanho');
   Route::post('/tamanho/update','updateTamanho')->name('produto.updateTamanho');
   Route::post('/tamanho/destroy','destroyTamanho')->name('produto.destroyTamanho');
  });

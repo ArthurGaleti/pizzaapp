@@ -17,7 +17,7 @@ class ProdutoTamanho extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = 'produtos_tamanhos';
-    protected $primarykey = 'id_produto_tamanhos';
+    protected $primaryKey = 'id_produto_tamanhos';
     protected $dates = ['created_at','updated_at','deleted_at'];
 
     protected $fillable = [

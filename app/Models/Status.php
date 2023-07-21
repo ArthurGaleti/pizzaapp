@@ -10,7 +10,7 @@ class Status extends Model
     use SoftDeletes;
 
     protected $table = 'status';
-    protected $primarykey = 'id_status';
+    protected $primaryKey = 'id_status';
     protected $dates = ['created_at','updated_at','deleted_at'];
 
     protected $fillable = [

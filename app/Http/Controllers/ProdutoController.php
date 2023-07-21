@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreProdutoRequest;
 use App\Http\Requests\UpdateProdutoRequest;
 use App\Models\{
     Produto,
     ProdutoTamanho,
-    TipoProduto
+    TipoProduto,
+    Tamanho
 };
 
 class ProdutoController extends Controller
@@ -89,7 +90,7 @@ class ProdutoController extends Controller
     {
         $produtoTamanho = null;
         $produto = Produto::find($id_produto);
-        $tamanhos = ProdutoTamanho::class;
+        $tamanhos = Tamanho::class;
         return view('produto.formTamanho') ->with(compact('produto', 'tamanhos', 'produtoTamanho'));
     }
 
@@ -102,7 +103,9 @@ class ProdutoController extends Controller
             'observacoes' => $request->observacoes
         ]);
 
-        return redirect ->route('produto.show',['id'=> $id_produto]) ->with('success','tamanho cadastrado');
+        return redirect()
+        ->route('produto.show',['id'=> $id_produto])
+        ->with('success','tamanho cadastrado');
     }
 
     public function editTamanho(int $id){

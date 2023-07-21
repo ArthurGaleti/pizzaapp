@@ -20,7 +20,7 @@ class Pedido extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = 'pedidos';
-    protected $primarykey = 'id_pedido';
+    protected $primaryKey = 'id_pedido';
     protected $dates = ['created_at','updated_at','deleted_at'];
 
     protected $fillable = [

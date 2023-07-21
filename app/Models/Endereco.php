@@ -11,7 +11,7 @@ class Endereco extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = 'enderecos';
-    protected $primarykey = 'id_endereco';
+    protected $primaryKey = 'id_endereco';
     protected $dates = ['created_at','updated_at','deleted_at'];
 
     protected $fillable = [

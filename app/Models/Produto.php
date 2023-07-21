@@ -6,14 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\TipoProduto;
+use App\Models\{
+    TipoProduto,
+    ProdutoTamanho
+};
 
 class Produto extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $table = 'produtos';
-    protected $primarykey = 'id_produto';
+    protected $primaryKey = 'id_produto';
     protected $dates = ['created_at','updated_at','deleted_at'];
 
     protected $fillable = [
@@ -31,16 +34,16 @@ class Produto extends Model
      * --------------------------------------
      */
 
-    public function usuarios():object{
-        return $this->belongsTo(User::class,
+    public function tipo():object{
+        return $this->belongsTo(TipoProduto::class,
                                 'id_tipo_produto',
                                 'id_tipo_produto');
     }
 
     public function tamanhos():object{
-        return $this->belongsTo(User::class,
-                                'id_tipo_produto',
-                                'id_tipo_produto');
+        return $this->belongsTo(ProdutoTamanho::class,
+                                'id_produto',
+                                'id_produto');
     }
 
 

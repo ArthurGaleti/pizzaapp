@@ -12,7 +12,7 @@ class Cliente extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = 'clientes';
-    protected $primarykey = 'id_cliente';
+    protected $primaryKey = 'id_cliente';
     protected $dates = ['created_at','updated_at','deleted_at'];
 
     protected $fillable = [
